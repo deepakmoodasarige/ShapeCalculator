@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Shape Calculator</title>
+  </head>
+  <body>
+    <main>
+      <h1>Shape Calculator</h1>
+      <div id="step-1">
+        <p>Step 1 : Select your shape</p>
+        <p>Please select the shape that you would like to calculate the area of and press the button "Go to step 2"
+        </p>
+        <input type="radio" id="rectangle-r" name="area" value="rectangle">
+        <label for="rectangle-r">Rectangle</label><br>
+        <input type="radio" id="circle-r" name="area" value="circle">
+        <label for="circle-r">Circle</label><br>
+        <input type="radio" id="square-r" name="area" value="square">
+        <label for="square-r">Square</label><br>
+        <input type="radio" id="ellipse-r" name="area" value="ellipse">
+        <label for="ellipse-r">Ellipse</label><br><br>
+        <button onclick="GetSelectedShape()" id="step-btn">Go to step 2</button> or <button onclick="window.location.reload()">Cancel</button>
+      </div>
+      <div id="step-2" style="display: none;">
+        <p>Step 2 : Insert your values</p>
+        <p>You have selected a <b id="selected-area"></b>, please input the required variables</p>
+        <div id="rectangle-form" style="display: none;">
+          <div>
+            <input class="rs-form-input" placeholder="Length..." id="value1-rectangle" />
+          </div>
+          <div>
+            <input class="rs-form-input" placeholder="Width..." id="value2-rectangle" />
+          </div>
+        </div>
+        <div id="circle-form" style="display: none;">
+          <div>
+            <input class="rs-form-input" placeholder="Diameter..." id="value1-circle" />
+          </div>
+        </div>
+        <div id="square-form" style="display: none;">
+          <div>
+            <input class="rs-form-input" placeholder="Side..." id="value1-square" />
+          </div>
+        </div>
+        <div id="ellipse-form" style="display: none;">
+          <div>
+            <input class="rs-form-input" placeholder="A axis..." id="value1-ellipse" />
+          </div>
+          <div>
+            <input class="rs-form-input" placeholder="B axis..." id="value2-ellipse" />
+          </div>
+        </div>
+        <button onclick="calculateArea()" id="step-btn">Go to step 3</button> or <button onclick="window.location.reload()">Cancel</button>
+      </div>
+      <div id="step-3" style="display: none;">
+        <p>Step 3 : Your Result</p>
+        <p id="result-para"></p>
+        <h2 id="result-heading"></h2>
+        <button onclick="window.location.reload()">Start over</button>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
