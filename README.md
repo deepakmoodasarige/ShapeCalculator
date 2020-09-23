@@ -1,0 +1,2 @@
+# ShapeCalculator
+Calculates the shape
